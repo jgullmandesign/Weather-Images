@@ -1,0 +1,487 @@
+/*****************************************************
+
+MAIN CSS
+Skapad 2017-01-10
+
+Denna CSS fil är en del av ett tentamens arbete
+Webaplikationsutveckling
+
+ *** Lernia YHJUST16 ***
+
+Skapad av Jesper Gullman
+
+******************************************************/
+
+
+/******************************************
+EMBEDDED FONTS
+******************************************/
+
+
+@font-face {
+  font-family: 'GalanoGrotesque-Light';
+  src:  url('fonts/GalanoGrotesque-Light.otf')  format('opentype'),
+	    url('fonts/GalanoGrotesque-Light.woff')  format('woff'), 
+        url('fonts/GalanoGrotesque-Light.ttf')  format('truetype'), 
+        url('fonts/GalanoGrotesque-Light.svg#GalanoGrotesque-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+/*******************************************
+  GENERAL
+********************************************/
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+/*******************************************
+  HEADER CONTENT
+********************************************/
+
+
+header {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  height: 100px;
+  background: #333;
+  z-index: 300;
+}
+
+.logo {
+  width: 100%;
+  margin-top: 0.6em;
+  align-self: center;
+  text-align: center;
+}
+
+.logo img {
+  height: 2em;
+  width: 90%
+}
+
+select:required:invalid {
+  color: gray;
+}
+option[value=""][disabled] {
+  display: none;
+}
+option {
+  color: black;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  margin-top: 5px;
+  margin-left: 1em;
+  display: block;
+  width: 70%;
+  font-size: 1.3em;
+  padding: 5px 50px 5px 10px;
+  background: url(../img/arrow_select.svg) no-repeat 95% center;
+  background-size: 0.7em;
+  align-self: flex-start;
+  color: #fff;
+  border: none;
+  background-color: #4d4d4d;
+}
+
+option {
+  color: #fff;
+  font-size: 0.7em;
+}
+
+/*******************************************
+  BURGER BUTTON
+********************************************/
+.container-burger {
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 49px;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #f08f00;
+  margin: 6px 0;
+  transition: 0.4s;
+  right: 100;
+}
+
+/* Rotera första strecket */
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+/* Fada ut det andra strecket */
+.change .bar2 {
+  opacity: 0;
+}
+
+/* Rotera sista strecket */
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+
+
+/*******************************************
+  MAIN CONTENT
+********************************************/
+
+#main-content {
+  display: flex;
+  margin-top: 100px;
+}
+
+img {
+  height: auto;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#photos {
+  position: relative;
+  display: flex;
+  
+}
+
+
+
+#photos ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+#photos ul li {
+  flex: 1 1 400px;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: -4px;
+}
+
+
+/*******************************************
+  FOOTER
+********************************************/
+
+.container {
+  min-width: 100%;
+  background: #333;
+  min-height: 350px;
+}
+
+footer h2 {
+  color: #fff;
+  font-family: 'GalanoGrotesque-Light';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.7em;
+  margin: 0;
+  padding: 10px;
+}
+
+footer h3 {
+  color: #fff;
+  font-family: 'GalanoGrotesque-Light';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.3em;
+}
+
+.copyright {
+  color: #fff;
+  text-align: center;
+}
+
+footer ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 0;
+  padding: 10px 0 0 0;
+}
+
+footer ul li {width: auto;
+  list-style: none;
+  width: 50%;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+footer ul li img {
+  width: 60%;
+}
+
+.social {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.social li {
+  width: 20%;
+  margin-right: 1em;
+}
+
+.social li:last-child {
+  margin-right: 0;
+}
+
+.social li img {
+  width: 100%;
+}
+
+
+/*******************************************
+  OVERLAY
+********************************************/
+
+
+#overlay {
+  display: flex;
+  /*background: rgba(0,0,0, 0.85);*/
+  position: fixed;
+  display: none;
+  flex-direction: column;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%,-50%);
+  width: 80%;
+  height: 420px;
+  z-index: 100;
+}
+
+.overlay-header {
+  display: flex;
+  background-color: rgba(0,0,0, 0.95);
+  width: 100%;
+  height: 70px;
+  min-height: 60px;
+}
+
+.overlay-header img {
+  margin: auto;
+  width: 70%;
+}
+
+.info {
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+}
+
+.info-header {
+  padding-top: 0.7em;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.weather-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.weather-icon {
+  display: flex;
+}
+
+.weather-icon img {
+  align-self: center;
+  height: 70%
+}
+
+.weather-description {
+  align-self: center;
+  width: 100%;
+}
+
+#city {
+  font-family: 'GalanoGrotesque-Light';
+  font-style: normal;
+  font-weight: normal;
+  align-self: center;
+  color: #fff;
+  font-size: 1.5em;
+}
+
+#country {
+  font-family: 'GalanoGrotesque-Light';
+  font-style: normal;
+  font-weight: normal;
+  align-self: center;
+  padding-bottom: 6px;
+  color: #fff;
+  font-size: 1.2em;
+}
+
+
+.description {
+  font-family: 'GalanoGrotesque-Light';
+  font-style: normal;
+
+	font-weight: normal;
+  color: #fff;
+  font-size: 1.2em;
+  text-align: right;
+}
+
+.temp {
+  font-family: 'GalanoGrotesque-Light';
+  font-style: normal;
+  font-weight: normal;
+  color: #fff;
+  text-align: right;
+  font-size: 1.5em;
+}
+
+.temp::after {
+  content: " \2103";
+  font-size: 0.9em;
+}
+
+.wind-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.wind-direction {
+  position: relative;
+  display: block !important;
+}
+
+.wind-direction img{
+  position: absolute;
+  width: 13px;
+  top: 10px;
+  right: 10px;
+}
+
+.wind {
+  font-family: 'GalanoGrotesque-Light';
+  font-style: normal;
+  font-weight: normal;
+  color: #fff;
+  text-align: right;
+  font-size: 1.5em;
+}
+
+.wind::after {
+  content: " ms";
+  font-size: 0.9em;
+}
+
+#comingForecast {
+  width: 100%;
+  display: flex;
+  padding-top: 1.5em;
+}
+
+#comingForecast ul{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 0 0 0 0;
+}
+
+#comingForecast li {
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+}
+
+#comingForecast img {
+  align-self: center;
+  width: 30%;
+  
+}
+
+#comingForecast li:first-child {
+  display: none;
+}
+
+#comingForecast li:last-child {
+  display: none;
+}
+
+#comingForecast li h3 {
+  font-size: 0.7em;
+  margin-bottom: 0;
+}
+
+.forecast-temp {
+  margin-top: 0.4em;
+  font-size: 1.4em;
+}
+
+.forecast-temp::after {
+  content: " \2103";
+  font-size: 0.8em
+}
+
+
+/*******************************************
+  LOADING PAGE
+********************************************/
+
+
+#loading-page {
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #444;
+  justify-content: center;
+}
+
+#loading-page .loading-img {
+  display: flex;
+  width: 50%;
+  align-self: center;
+}
+

@@ -1,0 +1,143 @@
+/*******************************************
+  MEDIA QUERYS
+********************************************/
+
+/* Media Query M Screens */
+
+@media screen and (min-width: 450px){
+  
+header {
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+}
+
+.logo {
+  width: 60%;
+  margin-left: 2em;
+  text-align: left;
+  margin-top: 0;
+}
+
+.logo img {
+  height: auto;
+	width: 80%;
+}
+
+
+select {
+  align-self: center;
+  margin: 30px 4em 30px;
+  width: 25%;
+  font-size: 1.1em;
+  padding: 5px 50px 5px 10px;
+}
+  
+#overlay {
+  width: 70%;
+  max-width: 600px;
+  height: 450px;
+}
+
+.weather-info {
+  padding-top: 0.5em;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+#city {
+  font-size: 2.5em;
+}
+
+#country {
+  padding-left: 1em;
+  color: #fff;
+  font-size: 1.5em;
+}
+
+.description {
+  font-size: 1.7em;
+}
+
+.temp {
+  padding-top: 0.3em;
+}
+
+.wind {
+  padding-top: 0.3em;
+}
+
+#comingForecast li:last-child {
+  display: block;
+}
+  
+.container-burger {
+  top: 30px;
+}
+  
+.container {
+  min-height: 225px;
+}
+  
+.social li {
+  width: 8%;
+}
+
+  
+  
+} /* M End */
+
+
+
+/* Media Query L Screens */
+
+@media screen and (min-width: 1020px){
+  
+
+.logo {
+  align-self: center;
+}
+
+.logo img {
+	height: 4em;
+	width: auto;
+}
+
+select {
+  font-size: 1.5em;
+  padding: 10px 50px 10px 10px;
+}
+  
+#overlay {
+  width: 600px;
+  min-width: 600px;
+  max-width: 600px;
+  height: 500px;
+}
+
+.weather-info {
+  padding-top: 1em;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+#city {
+  font-size: 3em;
+}
+
+#country {
+  padding-bottom: 6px;
+}
+
+.temp {
+  font-size: 1.5em;
+}
+
+.temp::after {
+  content: " \2103";
+  font-size: 0.9em;
+}
+  
+  
+}
